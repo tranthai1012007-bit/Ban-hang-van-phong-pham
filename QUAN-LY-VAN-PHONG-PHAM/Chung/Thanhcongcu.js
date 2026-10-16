@@ -2,7 +2,7 @@ const Thanhcongcu= `
 <div class="top-bar"></div>
     <header>
         <div class="header-logo">
-            <a href="#" class="logo"><img src="../Thanhcongcu/logooo.jpeg" alt="Logo"/></a>
+            <a href="#" class="logo"><img src="Chung/logooo.jpeg" alt="Logo"/></a>
         </div>
         <div class="header-center">
             <form class="search-form" action="/search" method="get">
