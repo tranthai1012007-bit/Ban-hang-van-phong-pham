@@ -1,0 +1,213 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background: #FFF5F8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#3A2A30;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/* ===== Thanh trên cùng ===== */
+.top-bar{
+    background:#F8D3E0;
+    height:30px;
+}
+
+/* ===== Header ===== */
+header{
+    background: #F57BA1;
+    color: #000000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 18px 32px 14px;
+}
+
+/* Logo */
+.logo>img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 290px;
+    height: 70px;
+}
+
+/* Khối giữa: tìm kiếm + ưu điểm */
+.header-center{
+    flex: 1;
+    max-width: 480px;
+}
+.search-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    background: #ffffff;
+    padding: 5px 5px 5px 0;
+    border-radius: 10px;
+}
+.search-form input{
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-left: 45px;
+    font-size: 18px;
+    font-family: inherit;
+}
+.search-form button{
+    width: 55px;
+    height: 100%;
+    border: none;
+    background: #F57BA1;
+    color: #000000;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Sản phẩm chính hãng / Hỗ trợ vận chuyển */
+.perks{
+    display: flex;
+    gap: 34px;
+    padding: 10px 0 0 10px;
+}
+.perk{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    text-align: left;
+}
+.perk i{
+    font-size: 18px;
+}
+
+/* Khối phải: 3 nút */
+.header-actions{
+    display: flex;
+    gap: 6px;
+    padding-top: 2px;
+}
+.action{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 30px;
+    background: #FFFFFF;
+    font-size: 16px;
+    line-height: 1.25;
+    text-align: left;
+    border-radius: 10px;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+.action:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 4px 6px rgba(255, 2, 154, 0.35);
+}
+.action_icon{
+    font-size: 20px;
+}
+
+/* ===== Thanh điều hướng ===== */
+nav{
+    background:#3A2A30;
+    color:#ffffff;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 43px;
+    padding: 0 20px;
+}
+.menu > li{
+    position: relative;
+}
+.menu > li > a{
+    display: inline-block;
+    line-height: 43px;
+    font-size: 14px;
+    color: #ffffff;
+}
+.menu > li > a.upper{
+    text-transform: uppercase;
+}
+.menu > li > a.hot{
+    color: #FFC83D;
+    text-transform: uppercase;
+}
+/* Menu con: ẩn, hiện khi rê chuột */
+.menu li ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 230px;
+    background:#3A2A30;
+    z-index: 10;
+}
+.menu li:hover > ul{
+    display: block;
+}
+.menu li ul a{
+    display: block;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #ffffff;
+}
+.menu li ul a:hover{
+    background: #F57BA1;
+    color: #000000;
+}
+.menu > li > a > i{
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 6px;
+    transition: transform 0.3s;
+}
+.menu > li:hover > a > i{
+    transform: rotate(180deg);
+}
+/* Phần tìm kiếm*/
+.search-form { position: relative; }
+
+#suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: none;
+  z-index: 1000;
+}
+
+#suggestions li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #222;
+}
+
+#suggestions li:hover { background: #f5f5f5; }
+
+#suggestions .xoa { color: #999; padding: 0 4px; }
+#suggestions .xoa:hover { color: red; }

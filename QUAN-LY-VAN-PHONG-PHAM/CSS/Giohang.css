@@ -1,0 +1,181 @@
+/* CSS riêng của trang giỏ hàng - mọi class đều có tiền tố gh- */
+.gh-main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 64px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.gh-box{
+    background:#FFFFFF;
+    border-radius: 24px;
+    padding: 18px 24px 24px;
+    box-shadow: 1px 3px 25px 0px rgb(212, 212, 211);
+}
+.gh-title{
+    font-family: 'Nunito', 'Segoe UI';
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    font-size: 35px;
+
+}
+
+/* ===== Giỏ hàng ===== */
+.gh-cart{
+    width: 900px;
+    min-height: 700px;
+}
+.gh-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    min-height: 98px;
+}
+.gh-check{
+    width: 24px;
+    height: 24px;
+    accent-color: #F57BA1;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.gh-img{
+    width: 66px;
+    height: 66px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+.gh-info{
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.gh-name{
+    font-weight: 600;
+}
+.gh-qty{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+.gh-qty button{
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: #F8D3E0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.gh-qty button:hover{
+    background: #E0527F;
+}
+
+/* Nút xóa sản phẩm */
+.gh-remove{
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #8A6969;
+    cursor: pointer;
+    align-self: flex-start;
+}
+.gh-remove:hover{
+    color: #d0021b;
+}
+
+/* Giỏ hàng trống */
+.gh-empty{
+    padding: 30px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Khu thêm thử (xóa cùng khối HTML khi không cần) */
+.gh-demo{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+.gh-demo button{
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    background: #F8D3E0;
+    cursor: pointer;
+}
+.gh-demo button:hover{
+    background: #F57BA1;
+}
+
+/* ===== Thông tin đơn hàng ===== */
+.gh-order{
+    width: 310px;
+}
+.gh-field{
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 26px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 6px;
+    background: #FFF8F8;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+}
+.gh-field:focus{
+    box-shadow: 0 0 0 2px #F57BA1;
+}
+.gh-total{
+    width: 120px;
+    margin: 0 0 20px auto;
+    padding: 14px 10px;
+    border-radius: 6px;
+    background: #FFF8F8;
+    font-size: 15px;
+}
+#gh-tong{
+    font-weight: 600;
+    display: block;
+}
+.gh-buttons{
+    display: flex;
+    gap: 14px;
+}
+.gh-btn{
+    flex: 1;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    background: #FFF8F8;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+}
+.gh-btn:hover{
+    background: #F57BA1;
+}
+h3.gh-nomal{
+    background: #D9D9D9;
+    padding: 10px;
+}
+section.border{
+    border: 1px solid #000000;
+}

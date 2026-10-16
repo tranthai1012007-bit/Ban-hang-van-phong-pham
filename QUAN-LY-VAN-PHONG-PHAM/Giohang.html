@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../Thanhcongcu/Thanhcongcu.css">
+    <link rel="stylesheet" href="giohang.css">
+</head>
+<body>
+    <main class="gh-main">
+
+        <section class="gh-box gh-cart">
+            <h2 class="gh-title">Giỏ hàng của bạn</h2>
+            <h3 class="gh-nomal">Sản phẩm thường</h3>
+        <article class="gh-border">
+            <div id="gh-danh-sach"></div>
+            <!-- Khu thử: xóa đi khi trang sản phẩm đã xong -->
+            <div class="gh-demo">
+                <span>Thêm thử:</span>
+                <button type="button" onclick="themVaoGio({id:1, ten:'Bút bi Thiên Long', gia:5000}); veLai()">+ Bút bi</button>
+                <button type="button" onclick="themVaoGio({id:2, ten:'Bút mực Hoshi', gia:8000}); veLai()">+ Bút mực</button>
+                <button type="button" onclick="themVaoGio({id:3, ten:'Vở 96 trang', gia:12000}); veLai()">+ Vở</button>
+            </div>
+        </article>
+        </section>
+
+        <section class="gh-box gh-order">
+            <h2 class="gh-title">Thông tin đơn hàng:</h2>
+
+            <select class="gh-field" aria-label="Loại hóa đơn">
+                <option>Loại hóa đơn</option>
+                <option>Hóa đơn cá nhân</option>
+                <option>Hóa đơn công ty</option>
+            </select>
+            <input type="text" class="gh-field" placeholder="Địa chỉ:" aria-label="Địa chỉ">
+            <input type="tel" class="gh-field" placeholder="Số điện thoại:" aria-label="Số điện thoại">
+
+            <div class="gh-total">Tổng tiền: <span id="gh-tong">0 đ</span></div>
+
+            <div class="gh-buttons">
+                <button type="button" class="gh-btn">Thanh toán</button>
+                <button type="button" class="gh-btn">Lưu thông tin</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../Thanhcongcu/Thanhcongcu.js"></script>
+    <script src="../Thanhcongcu/cart.js"></script>
+    <script src="giohang.js"></script>
+</body>
+</html>
