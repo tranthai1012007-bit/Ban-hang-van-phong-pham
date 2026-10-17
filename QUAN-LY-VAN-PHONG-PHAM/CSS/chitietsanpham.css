@@ -1,0 +1,160 @@
+
+.ct-main {
+    padding: 40px 20px;
+}
+
+.ct-box {
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;            
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+}
+
+.ct-gallery {
+    width: 400px;
+    margin-right: 40px;
+}
+
+.ct-anh-chinh {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #F8D3E0;
+    background: #FFF8F8;
+    text-align: center;
+}
+
+.ct-anh-chinh img {
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.ct-anh-phu {
+    margin-top: 15px;
+}
+
+.ct-thumb {
+    width: 80px;
+    height: 60px;
+    margin-right: 10px;
+    padding: 0;
+    border: 2px solid #cccccc;
+    background: white;
+    cursor: pointer;
+}
+
+.ct-thumb img {
+    width: 100%;
+    height: 100%;
+}
+
+.ct-thumb.active {
+    border: 2px solid #F57BA1;
+}
+
+.ct-info {
+    width: 500px;
+}
+
+.ct-ten {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.ct-gia {
+    font-size: 26px;
+    font-weight: bold;
+    color: #D6336C;
+    margin-bottom: 20px;
+}
+
+.ct-chitiet {
+    background: #FFF8F8;
+    padding: 15px;
+    overflow: hidden;           
+}
+
+.ct-chitiet dt {
+    float: left;                
+    width: 120px;
+    margin-bottom: 8px;
+    color: #8A6969;
+}
+
+.ct-chitiet dd {
+    margin-left: 120px;         
+    margin-bottom: 8px;
+}
+
+.ct-sl {
+    margin-top: 20px;
+}
+
+.ct-sl button {
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: #F8D3E0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.ct-sl input {
+    width: 55px;
+    height: 34px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.ct-buttons {
+    margin-top: 40px;
+}
+
+.ct-btn {
+    width: 200px;
+    height: 50px;
+    margin-right: 15px;
+    border: 2px solid #F57BA1;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ct-btn:hover {
+    background: #F8D3E0;
+}
+
+.ct-btn-chinh {
+    background: #F57BA1;
+}
+
+.ct-btn-chinh:hover {
+    background: #E0527F;
+}
+
+.ct-thongbao {
+    margin-top: 15px;
+    color: green;
+}
+
+.ct-thongbao.loi {
+    color: red;
+}
+
+.ct-thongbao a {
+    color: #D6336C;
+    text-decoration: underline;
+}
+
+.ct-khongco {
+    padding: 50px;
+    text-align: center;
+}
+
+.ct-footer {
+    background: #3A2A30;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}

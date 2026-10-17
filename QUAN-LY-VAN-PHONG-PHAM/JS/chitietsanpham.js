@@ -131,7 +131,12 @@ if (sp == null) {
     document.title = sp.ten;
     document.getElementById("ct-ten").innerHTML = sp.ten;
     document.getElementById("ct-ma").innerHTML = "SP" + sp.id;
-    document.getElementById("ct-nhanhang").innerHTML = sp.nhanhang;
+    // Chưa có nhãn hàng thì ghi "Đang cập nhật"
+    if (sp.nhanhang == "") {
+        document.getElementById("ct-nhanhang").innerHTML = "Đang cập nhật";
+    } else {
+        document.getElementById("ct-nhanhang").innerHTML = sp.nhanhang;
+    }
 
     if (sp.gia == null) {
         document.getElementById("ct-gia").innerHTML = "Liên hệ";
