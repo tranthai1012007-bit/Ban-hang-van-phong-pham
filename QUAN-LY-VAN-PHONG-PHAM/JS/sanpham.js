@@ -1,5 +1,4 @@
-/* Dữ liệu 40 sản phẩm lấy từ trangchu.html. gia = null nghĩa là chưa có giá (SP 38).
-   Sửa ở đây thì trang chi tiết đổi theo. */
+
 const SAN_PHAM = [
   {
     "id": 1,
