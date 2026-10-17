@@ -37,12 +37,6 @@ ul{
   width: 230px;
   flex-shrink: 0;
 }
-div{
-    text-align: center;
-    padding: 10px;
-    margin: 0 auto;
-
-}
 .box{
     background-color: #E0527F;
     border: 1px solid #FFFFFF;
