@@ -1,16 +1,18 @@
+const thuMuc = new URL(".", document.currentScript.src).href;   
+const goc    = new URL("../", document.currentScript.src).href; 
 const Thanhcongcu= `
 <div class="top-bar"></div>
     <header>
         <div class="header-logo">
-            <a href="#" class="logo"><img src="Chung/logooo.jpeg" alt="Logo"/></a>
+            <a href="${goc}trangchu.html" class="logo"><img src="${thuMuc}logooo.jpeg" alt="Logo"/></a>
         </div>
         <div class="header-center">
             <form class="search-form" action="/search" method="get">
                 <input type="text" name="q" placeholder="Tìm kiếm sản phẩm...." aria-label="Tìm kiếm sản phẩm">
                 <button type="submit" aria-label="Tìm kiếm">
                     <i class="fas fa-search"></i>
-                    <ul id="suggestions"></ul>
                 </button>
+                <ul id="suggestions"></ul>
             </form>
             <ul class="perks">
                 <li class="perk"><i class="fas fa-medal"></i>Sản phẩm chính hãng</li>
@@ -18,14 +20,14 @@ const Thanhcongcu= `
             </ul>
         </div>
         <div class="header-actions">
-            <a href="#" class="action"><span class="action_icon"><i class="fas fa-list-check"></i></span>Kiểm tra<br>đơn hàng</a>
-            <a href="#" class="action"><span class="action_icon"><i class="fas fa-user-check"></i></span>Đăng nhập/<br>Đăng kí</a>
-            <a href="#" class="action"><span class="action_icon"><i class="fas fa-cart-shopping"></i></span>Giỏ hàng</a>
+            <a href="${goc}tranhchu.html" class="action"><span class="action_icon"><i class="fas fa-list-check"></i></span>Kiểm tra<br>đơn hàng</a>
+            <a href="${goc}dangnhap.html" class="action"><span class="action_icon"><i class="fas fa-user-check"></i></span>Đăng nhập/<br>Đăng kí</a>
+            <a href="${goc}Giohang.html" class="action"><span class="action_icon"><i class="fas fa-cart-shopping"></i></span>Giỏ hàng</a>
         </div>
     </header>
     <nav>
         <ul class="menu">
-            <li><a href="#">TRANG CHỦ</a></li>
+            <li><a href="${goc}trangchu.html">TRANG CHỦ</a></li>
             <li><a href="#">BÚT VIẾT<i class="fas fa-chevron-down"></i></a>
                 <ul>
                     <li><a href="#">Bút bi</a></li>
