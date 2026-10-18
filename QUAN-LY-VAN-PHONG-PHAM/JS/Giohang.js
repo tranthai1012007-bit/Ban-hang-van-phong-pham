@@ -1,7 +1,6 @@
-// Lưu id các sản phẩm đang được tick
-const thuMuc = new URL(".", document.currentScript.src).href;   // .../Chung/
-const goc    = new URL("../", document.currentScript.src).href; // .../WebVPP/
-const daChon = new Set();
+ (function (){
+    var daChon=new Set();
+    var khung = document.getElementById("gh-danh-sach");
 
 function dinhDangTien(n) {
     return n.toLocaleString("vi-VN") + " đ";
@@ -15,7 +14,6 @@ function tinhTong() {
     document.getElementById("gh-tong").textContent = dinhDangTien(tong);
 }
 
-// Vẽ lại danh sách giỏ hàng từ localStorage
 function veLai() {
     const gio = docGioHang();
     const khung = document.getElementById("gh-danh-sach");
@@ -31,7 +29,7 @@ function veLai() {
         <div class="gh-item">
             <input type="checkbox" class="gh-check" data-id="${sp.id}"
                    ${daChon.has(sp.id) ? "checked" : ""} aria-label="Chọn sản phẩm">
-            <div class="gh-img">Ảnh sp</div>
+            <div class="gh-img"><img src="${sp.anh}" alt="${sp.ten}"></div>
             <div class="gh-info">
                 <p class="gh-name">${sp.ten}</p>
                 <p class="gh-price">${dinhDangTien(sp.gia)}</p>
@@ -49,7 +47,6 @@ function veLai() {
     tinhTong();
 }
 
-// Một chỗ lắng nghe cho mọi nút trong danh sách
 const dsGio = document.getElementById("gh-danh-sach");
 
 dsGio.addEventListener("click", function (e) {
@@ -73,5 +70,59 @@ dsGio.addEventListener("change", function (e) {
     if (e.target.checked) daChon.add(id); else daChon.delete(id);
     tinhTong();
 });
-
 veLai();
+var thongBao = document.getElementById("gh-thongbao");
+
+var demGio;
+function hienThongBao(noiDung, laLoi) {
+    clearTimeout(demGio);
+    thongBao.textContent = noiDung;
+    thongBao.className = laLoi ? "gh-thongbao loi" : "gh-thongbao";
+    demGio = setTimeout(function () { thongBao.textContent = ""; }, 3000);
+}
+document.getElementById("gh-luu").onclick = function () {
+    var oLoai = document.getElementById("gh-loaihd");
+    var oDiaChi = document.getElementById("gh-diachi");
+    var oSdt = document.getElementById("gh-sdt");
+    var diaChi = oDiaChi.value.trim();
+    var sdt = oSdt.value.trim();
+    if(daChon.size ===0){
+        hienThongBao("Vui lòng chọn ít nhất 1 sản phẩm", true);
+        return;
+    }
+    if(oLoai.value===""){
+        hienThongBao("Vui lòng chọn hóa đơn", true);
+        oLoai.focus();
+        return;
+    }
+
+    if (diaChi === "") {
+        hienThongBao("Vui lòng nhập địa chỉ.", true);
+        oDiaChi.focus();
+        return;
+    }
+    if (sdt === "") {
+        hienThongBao("Vui lòng nhập số điện thoại.", true);
+        oSdt.focus();
+        return;
+    }
+    if (!/^0\d{9}$/.test(sdt)) {
+        hienThongBao("Số điện thoại không hợp lệ (gồm 10 số, bắt đầu bằng 0).", true);
+        oSdt.focus();
+        return;
+    }
+
+    hienThongBao("Lưu thông tin thành công!", false);
+};
+document.getElementById("gh-thanhtoan").onclick = function () {
+    if (daChon.size === 0) {
+        hienThongBao("Vui lòng chọn ít nhất 1 sản phẩm để thanh toán.",true);
+        return;
+    }
+    localStorage.setItem("DaChon", JSON.stringify(Array.from(daChon)));
+    window.location.href = "thanhtoan.html";
+};
+ })();
+
+
+ 

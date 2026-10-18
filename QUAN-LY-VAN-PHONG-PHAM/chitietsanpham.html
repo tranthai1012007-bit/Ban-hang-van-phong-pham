@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Chung/Thanhcongcu.css">
+    <link rel="stylesheet" href="CSS/chitietsanpham.css">
+    <link rel="stylesheet" href="Chung/chantrang.css">
+</head>
+<body>
+    <main class="ct-main">
+        <section class="ct-box" id="ct-noidung">
+            <div class="ct-gallery">
+                <div class="ct-anh-chinh" id="ct-anh-chinh"></div>
+                <div class="ct-anh-phu" id="ct-anh-phu"></div>
+            </div>
+
+            <div class="ct-info">
+                <h1 class="ct-ten" id="ct-ten"></h1>
+                <p class="ct-gia" id="ct-gia"></p>
+                <dl class="ct-chitiet">
+                    <dt>Mã sản phẩm</dt><dd id="ct-ma"></dd>
+                    <dt>Nhãn hàng</dt><dd id="ct-nhanhang"></dd>
+                </dl>
+
+                <div class="ct-sl">
+                    <span>Số lượng</span>
+                    <button type="button" id="ct-giam" aria-label="Giảm">−</button>
+                    <input type="number" id="ct-soluong" value="1" min="1" max="99" aria-label="Số lượng">
+                    <button type="button" id="ct-tang" aria-label="Tăng">+</button>
+                </div>
+
+                <div class="ct-buttons">
+                    <button type="button" class="ct-btn" id="ct-them">Thêm vào giỏ</button>
+                    <button type="button" class="ct-btn ct-btn-chinh" id="ct-mua">Mua ngay</button>
+                </div>
+                <p class="ct-thongbao" id="ct-thongbao" role="status"></p>
+            </div>
+        </section>
+    </main>
+  <script src="Chung/Thanhcongcu.js"></script>
+    <script src="JS/sanpham.js"></script>
+    <script src="JS/cart.js"></script>
+    <script src="JS/Giohang.js"></script>
+    <script src="JS/chitietsanpham.js"></script>
+    <script src="Chung/chantrang.js"></script>
+
+</body>
+</html>

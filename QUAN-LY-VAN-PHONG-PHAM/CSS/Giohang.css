@@ -1,4 +1,3 @@
-/* CSS riêng của trang giỏ hàng - mọi class đều có tiền tố gh- */
 .gh-main{
     display: flex;
     justify-content: center;
@@ -24,7 +23,6 @@
 
 }
 
-/* ===== Giỏ hàng ===== */
 .gh-cart{
     width: 900px;
     min-height: 700px;
@@ -39,6 +37,8 @@
     padding: 16px 20px;
     margin-bottom: 30px;
     min-height: 98px;
+    border: 1px solid #f7a8c4;      
+    border-radius: 10px;            
 }
 .gh-check{
     width: 24px;
@@ -59,7 +59,7 @@
 }
 .gh-info{
     flex: 1;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
 }
 .gh-name{
@@ -68,7 +68,7 @@
 .gh-qty{
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap:8px;
     margin-top: 4px;
 }
 .gh-qty button{
@@ -83,47 +83,25 @@
     background: #E0527F;
 }
 
-/* Nút xóa sản phẩm */
 .gh-remove{
+    position:static;
     border: none;
     background: transparent;
-    font-size: 16px;
+    font-size: 20px;
     color: #8A6969;
     cursor: pointer;
-    align-self: flex-start;
+    align-self: center;
 }
 .gh-remove:hover{
-    color: #d0021b;
+    color: #f60521;
 }
 
-/* Giỏ hàng trống */
 .gh-empty{
     padding: 30px 0;
     text-align: center;
     font-size: 14px;
 }
 
-/* Khu thêm thử (xóa cùng khối HTML khi không cần) */
-.gh-demo{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 8px;
-    font-size: 13px;
-}
-.gh-demo button{
-    padding: 6px 10px;
-    border: none;
-    border-radius: 4px;
-    background: #F8D3E0;
-    cursor: pointer;
-}
-.gh-demo button:hover{
-    background: #F57BA1;
-}
-
-/* ===== Thông tin đơn hàng ===== */
 .gh-order{
     width: 310px;
 }
@@ -169,13 +147,27 @@
     font-family: inherit;
     cursor: pointer;
 }
+.gh-thongbao{
+    margin-top: 14px;
+    text-align: center;
+    color: #2e7d32;
+    font-weight: 600;
+    min-height: 20px;
+}
+.gh-thongbao.loi{
+    color:#f60521;
+}
 .gh-btn:hover{
     background: #F57BA1;
 }
 h3.gh-nomal{
     background: #D9D9D9;
     padding: 10px;
+    margin-bottom: 15px;
 }
 section.border{
-    border: 1px solid #000000;
+    border: 1px solid #000000;}
+.gh-img { width: 90px; height: 90px; flex-shrink: 0; }
+.gh-img img {
+ width: 100%; height: 100%; object-fit: cover; display: block; 
 }
