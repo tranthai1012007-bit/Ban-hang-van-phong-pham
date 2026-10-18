@@ -22,21 +22,22 @@
         <section class="gh-box gh-order">
             <h2 class="gh-title">Thông tin đơn hàng:</h2>
 
-            <select class="gh-field" aria-label="Loại hóa đơn">
-                <option>Loại hóa đơn</option>
-                <option>Hóa đơn cá nhân</option>
-                <option>Hóa đơn công ty</option>
+            <select class="gh-field" id="gh-loaihd" aria-label="Loại hóa đơn">
+                <option value="">Loại hóa đơn</option>
+                <option value="canhan">Hóa đơn cá nhân</option>
+                <option value="congty">Hóa đơn công ty</option>
             </select>
-            <input type="text" class="gh-field" placeholder="Địa chỉ:" aria-label="Địa chỉ">
-            <input type="tel" class="gh-field" placeholder="Số điện thoại:" aria-label="Số điện thoại">
+            <input type="text" id="gh-diachi" class="gh-field" placeholder="Địa chỉ:" aria-label="Địa chỉ">
+            <input type="tel" id="gh-sdt" class="gh-field" placeholder="Số điện thoại:" aria-label="Số điện thoại">
 
             <div class="gh-total">Tổng tiền: <span id="gh-tong">0 đ</span></div>
 
             <div class="gh-buttons">
-                <button type="button" class="gh-btn">Thanh toán</button>
-                <button type="button" class="gh-btn">Lưu thông tin</button>
+                <button type="button" class="gh-btn" id="gh-thanhtoan">Thanh toán</button>
+                <button type="button" class="gh-btn" id="gh-luu">Lưu thông tin</button>
             </div>
-        </section>
+                <p class="gh-thongbao" id="gh-thongbao" role="status"></p>
+    </section>
     </main>
     <script src="Chung/Thanhcongcu.js"></script>
     <script src="JS/cart.js"></script>

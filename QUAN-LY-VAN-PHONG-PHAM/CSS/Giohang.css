@@ -147,6 +147,16 @@
     font-family: inherit;
     cursor: pointer;
 }
+.gh-thongbao{
+    margin-top: 14px;
+    text-align: center;
+    color: #2e7d32;
+    font-weight: 600;
+    min-height: 20px;
+}
+.gh-thongbao.loi{
+    color:#f60521;
+}
 .gh-btn:hover{
     background: #F57BA1;
 }
