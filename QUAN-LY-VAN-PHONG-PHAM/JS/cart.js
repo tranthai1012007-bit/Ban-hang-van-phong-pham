@@ -1,6 +1,6 @@
 
 function layGio() {
-    var chuoi = localStorage.getItem("gioHang");
+    var chuoi = localStorage.getItem("Giohang");
     if (chuoi == null) {
         return [];
     }
@@ -8,7 +8,7 @@ function layGio() {
 }
 
 function luuGio(gio) {
-    localStorage.setItem("gioHang", JSON.stringify(gio));
+    localStorage.setItem("Giohang", JSON.stringify(gio));
 }
 
 function themVaoGio(sp, soLuong) {
@@ -70,4 +70,7 @@ function tongTien() {
         tong = tong + gio[i].gia * gio[i].soLuong;
     }
     return tong;
+}
+function docGioHang(){
+    return layGio();
 }

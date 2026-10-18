@@ -1,7 +1,6 @@
-// Lưu id các sản phẩm đang được tick
-const thuMuc = new URL(".", document.currentScript.src).href;   // .../Chung/
-const goc    = new URL("../", document.currentScript.src).href; // .../WebVPP/
-const daChon = new Set();
+ (function (){
+    var daChon=new Set();
+    var khung = document.getElementById("gh-danh-sach");
 
 function dinhDangTien(n) {
     return n.toLocaleString("vi-VN") + " đ";
@@ -15,7 +14,6 @@ function tinhTong() {
     document.getElementById("gh-tong").textContent = dinhDangTien(tong);
 }
 
-// Vẽ lại danh sách giỏ hàng từ localStorage
 function veLai() {
     const gio = docGioHang();
     const khung = document.getElementById("gh-danh-sach");
@@ -31,7 +29,7 @@ function veLai() {
         <div class="gh-item">
             <input type="checkbox" class="gh-check" data-id="${sp.id}"
                    ${daChon.has(sp.id) ? "checked" : ""} aria-label="Chọn sản phẩm">
-            <div class="gh-img">Ảnh sp</div>
+            <div class="gh-img"><img src="${sp.anh}" alt="${sp.ten}"></div>
             <div class="gh-info">
                 <p class="gh-name">${sp.ten}</p>
                 <p class="gh-price">${dinhDangTien(sp.gia)}</p>
@@ -49,7 +47,6 @@ function veLai() {
     tinhTong();
 }
 
-// Một chỗ lắng nghe cho mọi nút trong danh sách
 const dsGio = document.getElementById("gh-danh-sach");
 
 dsGio.addEventListener("click", function (e) {
@@ -75,3 +72,4 @@ dsGio.addEventListener("change", function (e) {
 });
 
 veLai();
+ })();
