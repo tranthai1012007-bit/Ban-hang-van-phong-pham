@@ -1,10 +1,12 @@
 const SHIPPING_FEE = 30000;
-
-let cart = JSON.parse(localStorage.getItem('cart'));
-if (!cart || cart.length === 0) {
-    cart = [
-        { id: 1, name: 'Tên sản phẩm', price: 100000, qty: 10, image: '' }
-    ];
+let gioHangGoc = JSON.parse(localStorage.getItem('Giohang')) || [];
+let dsDaChon = JSON.parse(localStorage.getItem('DaChon'));
+let cart = [];
+if (dsDaChon && dsDaChon.length > 0) {
+    let dsDaChonStr = dsDaChon.map(String); 
+    cart = gioHangGoc.filter(sp => dsDaChonStr.includes(String(sp.id)));
+} else {
+    cart = gioHangGoc;
 }
 
 function formatMoney(num) {
@@ -28,7 +30,7 @@ function renderCart() {
     listEl.innerHTML = '';
 
     cart.forEach(item => {
-        const thanhTien = item.price * item.qty;
+        const thanhTien = item.gia * item.soLuong;
         subtotal += thanhTien;
 
         const row = document.createElement('div');
@@ -36,12 +38,12 @@ function renderCart() {
         row.innerHTML = `
             <div class="product-info">
                 <div class="product-img">
-                    ${item.image ? `<img src="${item.image}" alt="">` : 'Ảnh sp'}
+                    ${item.anh ? `<img src="${item.anh}" alt="">` : 'Ảnh sp'}
                 </div>
-                <div class="product-name">${item.name}</div>
+                <div class="product-name">${item.ten}</div>
             </div>
-            <div>${formatMoney(item.price)}</div>
-            <div>${item.qty}</div>
+            <div>${formatMoney(item.gia)}</div>
+            <div>${item.soLuong}</div>
             <div>${formatMoney(thanhTien)}</div>
         `;
         listEl.appendChild(row);
@@ -62,37 +64,39 @@ document.getElementById('btn-order').addEventListener('click', function () {
     }
 
     if (cart.length === 0) {
-        alert('Giỏ hàng đang trống, không thể đặt hàng!');
+        alert('Không có sản phẩm nào để thanh toán!');
         return;
     }
 
     const message = document.getElementById('message').value.trim();
     const voucher = document.getElementById('voucher').value.trim();
-    const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const subtotal = cart.reduce((sum, item) => sum + item.gia * item.soLuong, 0);
     const grandTotal = subtotal + SHIPPING_FEE;
-
     const order = {
         id: 'DH' + Date.now(),
         date: new Date().toLocaleString('vi-VN'),
         address: address,
         message: message,
         voucher: voucher,
-        items: cart,
+        items: cart, 
         subtotal: subtotal,
         shipping: SHIPPING_FEE,
         total: grandTotal
     };
-
     let orders = JSON.parse(localStorage.getItem('orders')) || [];
     orders.push(order);
     localStorage.setItem('orders', JSON.stringify(orders));
-    localStorage.removeItem('cart');
+    if (dsDaChon && dsDaChon.length > 0) {
+        let dsDaChonStr = dsDaChon.map(String);
+        let gioHangConLai = gioHangGoc.filter(sp => !dsDaChonStr.includes(String(sp.id)));
+        localStorage.setItem('Giohang', JSON.stringify(gioHangConLai));
+        localStorage.removeItem('DaChon');
+    } else {
+        localStorage.removeItem('Giohang');
+    }
 
     alert('Đặt hàng thành công!\nMã đơn: ' + order.id + '\nTổng tiền: ' + formatMoney(grandTotal));
-
-    cart = [];
-    renderCart();
-    if (typeof updateCartCount === 'function') updateCartCount(); 
+    window.location.href = 'trangchu.html'; 
 });
 
 renderCart();
