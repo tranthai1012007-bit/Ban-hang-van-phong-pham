@@ -1,6 +1,9 @@
-const SHIPPING_FEE = 30000;
+const SHIPPING_FEE = 20000;
+
 let gioHangGoc = JSON.parse(localStorage.getItem('Giohang')) || [];
 let dsDaChon = JSON.parse(localStorage.getItem('DaChon'));
+let thongTinGiaoHang = JSON.parse(localStorage.getItem('ThongTinGiaoHang'));
+
 let cart = [];
 if (dsDaChon && dsDaChon.length > 0) {
     let dsDaChonStr = dsDaChon.map(String); 
@@ -9,10 +12,19 @@ if (dsDaChon && dsDaChon.length > 0) {
     cart = gioHangGoc;
 }
 
+const elDiaChi = document.getElementById('hien-thi-dia-chi');
+if (thongTinGiaoHang && thongTinGiaoHang.diaChi) {
+    elDiaChi.innerHTML = `
+        <div><strong>Số điện thoại người nhận:</strong> ${thongTinGiaoHang.sdt}</div>
+        <div><strong>Địa chỉ:</strong> ${thongTinGiaoHang.diaChi}</div>
+    `;
+} else {
+    elDiaChi.innerHTML = `<span style="color: red;">Chưa có thông tin giao hàng. Vui lòng quay lại giỏ hàng!</span>`;
+}
+
 function formatMoney(num) {
     return num.toLocaleString('vi-VN') + 'đ';
 }
-
 function renderCart() {
     const listEl = document.getElementById('cart-list');
     const emptyEl = document.getElementById('empty-cart');
@@ -54,12 +66,9 @@ function renderCart() {
     document.getElementById('shipping').innerText = formatMoney(SHIPPING_FEE);
     document.getElementById('grand-total').innerText = formatMoney(grandTotal);
 }
-
 document.getElementById('btn-order').addEventListener('click', function () {
-    const address = document.getElementById('address').value.trim();
-    if (!address) {
-        alert('Vui lòng nhập địa chỉ nhận hàng!');
-        document.getElementById('address').focus();
+    if (!thongTinGiaoHang || !thongTinGiaoHang.diaChi) {
+        alert('Vui lòng quay lại giỏ hàng để nhập địa chỉ và số điện thoại!');
         return;
     }
 
@@ -72,10 +81,12 @@ document.getElementById('btn-order').addEventListener('click', function () {
     const voucher = document.getElementById('voucher').value.trim();
     const subtotal = cart.reduce((sum, item) => sum + item.gia * item.soLuong, 0);
     const grandTotal = subtotal + SHIPPING_FEE;
+
     const order = {
         id: 'DH' + Date.now(),
         date: new Date().toLocaleString('vi-VN'),
-        address: address,
+        address: thongTinGiaoHang.diaChi,
+        phone: thongTinGiaoHang.sdt,
         message: message,
         voucher: voucher,
         items: cart, 
@@ -83,9 +94,11 @@ document.getElementById('btn-order').addEventListener('click', function () {
         shipping: SHIPPING_FEE,
         total: grandTotal
     };
+
     let orders = JSON.parse(localStorage.getItem('orders')) || [];
     orders.push(order);
     localStorage.setItem('orders', JSON.stringify(orders));
+
     if (dsDaChon && dsDaChon.length > 0) {
         let dsDaChonStr = dsDaChon.map(String);
         let gioHangConLai = gioHangGoc.filter(sp => !dsDaChonStr.includes(String(sp.id)));
@@ -94,8 +107,11 @@ document.getElementById('btn-order').addEventListener('click', function () {
     } else {
         localStorage.removeItem('Giohang');
     }
+    
+    localStorage.removeItem('ThongTinGiaoHang');
 
-    alert('Đặt hàng thành công!\nMã đơn: ' + order.id + '\nTổng tiền: ' + formatMoney(grandTotal));
+    alert('Đặt hàng thành công!\nMã đơn: ' + order.id + '\nTổng thanh toán: ' + formatMoney(grandTotal));
+
     window.location.href = 'trangchu.html'; 
 });
 

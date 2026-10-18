@@ -2,35 +2,32 @@
     padding: 30px 100px 50px 100px;
     min-height: 500px;
 }
+
 .address-box {
     background: #e0e0e0;
     padding: 18px 25px;
     margin-bottom: 22px;
     font-size: 15px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
 }
 .address-box label {
     flex-shrink: 0;
+    font-weight: bold;
 }
-.address-box input {
-    flex: 1;
-    height: 38px;
-    border: 1px solid #bbb;
-    background: white;
-    padding: 0 12px;
-    font-size: 14px;
-    outline: none;
-    font-family: inherit;
+.address-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #333;
 }
-.address-box input:focus {
-    border-color: #F57BA1;
-}
+
 .checkout-box {
     background: #e0e0e0;
     padding: 20px 25px;
 }
+
 .checkout-header {
     display: grid;
     grid-template-columns: 2.5fr 1fr 1fr 1fr;
@@ -41,6 +38,7 @@
 .checkout-header > div:not(:first-child) {
     text-align: center;
 }
+
 .product-row {
     background: white;
     display: grid;
@@ -79,6 +77,7 @@
     text-align: center;
     font-size: 14px;
 }
+
 .empty-cart {
     text-align: center;
     color: #888;
@@ -89,6 +88,7 @@
 .empty-cart.show {
     display: block;
 }
+
 .total-box {
     background: white;
     padding: 20px 25px;
@@ -109,6 +109,7 @@
     font-weight: bold;
     color: #c2185b;
 }
+
 .inputs-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -134,6 +135,7 @@
 .input-group input:focus {
     border-color: #F57BA1;
 }
+
 .order-btn-wrapper {
     display: flex;
     justify-content: flex-end;
@@ -141,10 +143,11 @@
 .order-btn {
     background: #fce4ec;
     border: 1px solid #bbb;
-    padding: 18px 70px;
-    font-size: 15px;
+    padding: 18px 40px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    color: #333;
+    color: #c2185b;
     border-radius: 3px;
     transition: background 0.2s;
     font-family: inherit;
@@ -153,6 +156,7 @@
     background: #F57BA1;
     color: white;
 }
+
 .footer {
     background: #424242;
     color: white;

@@ -6,16 +6,15 @@
     <title>Thanh toán</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link rel="stylesheet" href="Chung/Thanhcongcu.css">
     <link rel="stylesheet" href="CSS/thanhtoan.css">
 </head>
 <body>
-
     <main class="main">
         <div class="address-box">
-            <label for="address">Địa chỉ nhận hàng:</label>
-            <input type="text" id="address" placeholder="Nhập địa chỉ giao hàng...">
+            <label>Địa chỉ nhận hàng:</label>
+            <div id="hien-thi-dia-chi" class="address-info">
+            </div>
         </div>
 
         <div class="checkout-box">
@@ -27,7 +26,8 @@
             </div>
 
             <div id="cart-list"></div>
-            <div id="empty-cart" class="empty-cart">Giỏ hàng đang trống!</div>
+
+            <div id="empty-cart" class="empty-cart">Không có sản phẩm nào để thanh toán!</div>
 
             <div class="total-box">
                 <div class="total-line">
@@ -47,16 +47,16 @@
             <div class="inputs-row">
                 <div class="input-group">
                     <label for="message">Lời nhắn:</label>
-                    <input type="text" id="message">
+                    <input type="text" id="message" placeholder="Lời nhắn cho người bán...">
                 </div>
                 <div class="input-group">
                     <label for="voucher">Voucher:</label>
-                    <input type="text" id="voucher">
+                    <input type="text" id="voucher" placeholder="Nhập mã giảm giá...">
                 </div>
             </div>
 
             <div class="order-btn-wrapper">
-                <button class="order-btn" id="btn-order">Đặt hàng</button>
+                <button class="order-btn" id="btn-order">XÁC NHẬN ĐẶT HÀNG</button>
             </div>
         </div>
     </main>
@@ -64,8 +64,6 @@
     <footer class="footer">footer</footer>
 
     <script src="Chung/Thanhcongcu.js"></script>
-    <script src="JS/thanhtoan.js"></script>
-    <script src="JS/cart.js"></script>
     <script src="JS/thanhtoan.js"></script>
 </body>
 </html>
