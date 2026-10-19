@@ -21,7 +21,6 @@ body {
     color: var(--text);
 }
 
-/* ===== PHẦN ĐẦU TRANG ===== */
 .site-header {
     background: var(--pink);
     width: 100%;
@@ -95,7 +94,6 @@ body {
     background: #ffffff;
 }
 
-/* ===== THANH ĐIỀU HƯỚNG ===== */
 .navigation-bar {
     min-height: 35px;
     padding: 9px 38px;
@@ -108,7 +106,6 @@ body {
     text-decoration: none;
 }
 
-/* ===== KHU VỰC ĐĂNG NHẬP ===== */
 .login-page {
     min-height: calc(100vh - 129px);
     padding: 50px 20px;
@@ -188,7 +185,6 @@ body {
     background: #ed628d;
 }
 
-/* ===== CHÂN TRANG ===== */
 .site-footer {
     min-height: 24px;
     padding: 5px 10px;
@@ -198,7 +194,6 @@ body {
     font-size: 12px;
 }
 
-/* ===== HIỂN THỊ TRÊN ĐIỆN THOẠI ===== */
 @media (max-width: 600px) {
     .header-inner {
         padding: 12px 14px;
