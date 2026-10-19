@@ -1,0 +1,236 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #f4779e;
+    --light-pink: #faeaea;
+    --brown: #8b6d6d;
+    --footer: #4b4343;
+    --white: #ffffff;
+    --input-gray: #d9d9d9;
+    --text: #222222;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+}
+
+/* ===== PHẦN ĐẦU TRANG ===== */
+.site-header {
+    background: var(--pink);
+    width: 100%;
+}
+
+.header-inner {
+    min-height: 70px;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    color: #111111;
+    font-size: 15px;
+    text-decoration: underline;
+    flex: 1;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.header-link {
+    color: #111111;
+    font-size: 14px;
+    line-height: 1.2;
+    text-decoration: none;
+    text-align: center;
+}
+
+.order-link {
+    min-width: 68px;
+}
+
+.account-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    background: #f7b6ca;
+}
+
+.user-icon {
+    font-size: 16px;
+}
+
+.account-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 84px;
+}
+
+.header-button {
+    display: block;
+    padding: 4px 8px;
+    background: #f5d1dc;
+    color: #222222;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.header-button:hover {
+    background: #ffffff;
+}
+
+/* ===== THANH ĐIỀU HƯỚNG ===== */
+.navigation-bar {
+    min-height: 35px;
+    padding: 9px 38px;
+    background: var(--brown);
+}
+
+.navigation-bar a {
+    color: #ffffff;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* ===== KHU VỰC ĐĂNG NHẬP ===== */
+.login-page {
+    min-height: calc(100vh - 129px);
+    padding: 50px 20px;
+    background: var(--light-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 302px;
+    padding: 36px 18px 23px;
+    background: var(--white);
+    border-radius: 16px;
+}
+
+.auth-container h1 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.login-intro {
+    margin: 0 0 14px;
+    font-size: 12px;
+    text-align: center;
+    color: #555555;
+}
+
+#loginForm label {
+    display: block;
+    margin: 0 0 16px;
+    font-size: 12px;
+}
+
+#loginForm input {
+    display: block;
+    width: 100%;
+    height: 33px;
+    margin-top: 14px;
+    padding: 7px 9px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: var(--input-gray);
+    color: #222222;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+#loginForm input:focus {
+    outline: 2px solid var(--pink);
+}
+
+.auth-links {
+    margin: 10px 0 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.auth-links a {
+    color: #222222;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+#loginForm button {
+    margin: 44px auto 0;
+}
+
+#loginForm button:hover {
+    background: #ed628d;
+}
+
+/* ===== CHÂN TRANG ===== */
+.site-footer {
+    min-height: 24px;
+    padding: 5px 10px;
+    background: var(--footer);
+    color: #eeeeee;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* ===== HIỂN THỊ TRÊN ĐIỆN THOẠI ===== */
+@media (max-width: 600px) {
+    .header-inner {
+        padding: 12px 14px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .brand {
+        flex: auto;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .header-link {
+        font-size: 12px;
+    }
+
+    .navigation-bar {
+        padding-left: 20px;
+    }
+
+    .login-page {
+        min-height: calc(100vh - 170px);
+        padding: 35px 16px;
+    }
+
+    .auth-container {
+        max-width: 360px;
+    }
+}

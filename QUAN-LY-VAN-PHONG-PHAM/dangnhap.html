@@ -1,35 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập tài khoản</title>
-    <link rel="stylesheet" href="auth.css">
+    <title>Đăng nhập - Thiên Long Shop</title>
+
+    <link rel="stylesheet" href="CSS/dangnhap.css">
 </head>
+
 <body>
-    <div class="auth-container">
-        <h1>Đăng nhập</h1>
-        <p>Chào mừng bạn quay trở lại!</p>
+    <!-- Phần đầu trang -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="trangchu.html">
+                Copy Văn phòng phẩm - Thiên Long Shop
+            </a>
 
-        <form id="loginForm">
-            <label for="email">Email</label>
-            <input type="email" id="email"
-                   placeholder="Nhập email" required>
+            <div class="header-actions">
+                <a href="#" class="header-link order-link">
+                    Kiểm tra<br>đơn hàng
+                </a>
 
-            <label for="password">Mật khẩu</label>
-            <input type="password" id="password"
-                   placeholder="Nhập mật khẩu" required>
+                <div class="account-buttons">
+    <a href="dangnhap.html" class="header-button">
+        Đăng nhập
+    </a>
+                </div>
 
-            <button type="submit">Đăng nhập</button>
-        </form>
+                <a href="Giohang.html" class="header-link">
+                    Giỏ hàng
+                </a>
+            </div>
+        </div>
+    </header>
 
-        <p>Chưa có tài khoản?
-            <a href="dang-ky.html">Đăng ký ngay</a>
-        </p>
+    <!-- Thanh điều hướng -->
+    <nav class="navigation-bar">
+        <a href="trangchu.html">Trang chủ</a>
+    </nav>
 
-        <a href="../Thanhcongcu.html">Quay lại trang chủ</a>
-    </div>
+    <!-- Nội dung đăng nhập -->
+    <main class="login-page">
+        <section class="auth-container">
+            <h1>Đăng nhập</h1>
+            <p class="login-intro">Chào mừng bạn quay trở lại!</p>
 
-    <script src="dang-nhap.js"></script>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Nhập email"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="password">Mật khẩu</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Nhập mật khẩu"
+                    autocomplete="current-password"
+                    required
+                >
+                <button type="submit">Đăng nhập</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Chân trang -->
+    <footer class="site-footer">
+        footer
+    </footer>
+
+    <script src="JS/dangnhap.js"></script>
 </body>
 </html>
