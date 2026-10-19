@@ -16,8 +16,9 @@ ul{
     list-style: none;
 }
 .h1{
+    color: #e0527f;
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
     font-family: 'Nunito', 'Segoe UI';
     margin: 15px;
 }
@@ -30,7 +31,7 @@ ul{
     gap: 20px;
     align-items: flex-start; /* QUAN TRỌNG: nếu thiếu, sticky sẽ không chạy */
     gap: 20px;
-    }
+}
 .sidebar {
   position: sticky;
   top: 20px;          /* cách mép trên 20px khi cuộn */
@@ -80,21 +81,28 @@ img{
 }
 
 .sanpham{
+    border: 2px solid #897777;
     display: flex;
-  flex-direction: column;
-  padding: 14px;
-  text-align: center;
-  background: #fff;
-  border: 2px solid var(--line);
-  border-radius: 20px;
-  box-shadow: 4px 4px 0 var(--line);
-  transition: border-color .2s, box-shadow .2s, transform .2s
+    flex-direction: column;
+    padding: 14px;
+    text-align: center;
+    background: #fff;
+    border: 2px solid #e0558a;
+    border-radius: 20px;
+    box-shadow: 4px 4px 0 var(--line);
+    transition: border-color .2s, box-shadow .2s, transform .2s;
+    cursor: pointer;
 }
-
+.sanpham:hover{
+    transform: translateY(-16px) scale(1.08);
+    z-index: 10;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
 .sanpham-div{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 22px
+    gap: 22px;
+    margin: 20px;
 }
 .img-sanpham{
     width: 100%;
@@ -118,21 +126,21 @@ img{
 }
 
 .actions button {
-  flex: 1;                  /* hai nút rộng bằng nhau */
-  white-space: nowrap;
-  padding: 8px 10px;
-  border: none;
-  border-radius: 6px;
-  font-size: 10px;
-  cursor: pointer;
-
+    flex: 1;                  /* hai nút rộng bằng nhau */
+    white-space: nowrap;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 10px;
+    cursor: pointer;
 }
+
 
 /* Nút "Thêm vào giỏ" */
 .actions button:first-child {
-  background: #fff;
-  color: #e0527f;
-  border: 1px solid #e0527f;
+    background: #fff;
+    color: #e0527f;
+    border: 1px solid #e0527f;
 }
 
 /* Nút "Mua ngay" */
