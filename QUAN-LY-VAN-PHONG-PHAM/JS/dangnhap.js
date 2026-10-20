@@ -13,7 +13,9 @@ loginForm.addEventListener("submit", function (event) {
         email.toLowerCase() === demoEmail &&
         password === demoPassword
     ) {
+        localStorage.setItem("taiKhoan", email.toLowerCase());
         alert("Đăng nhập thành công! Chào mừng bạn đến với WebVPP.");
+        window.location.href = "trangchu.html";
     } else {
         alert("Email hoặc mật khẩu không chính xác. Vui lòng thử lại!");
     }

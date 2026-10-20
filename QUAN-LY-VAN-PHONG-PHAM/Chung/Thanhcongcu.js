@@ -20,8 +20,8 @@ const Thanhcongcu= `
             </ul>
         </div>
         <div class="header-actions">
-            <a href="${goc}tranhchu.html" class="action"><span class="action_icon"><i class="fas fa-list-check"></i></span>Kiểm tra<br>đơn hàng</a>
-            <a href="${goc}dangnhap.html" class="action"><span class="action_icon"><i class="fas fa-user-check"></i></span>Đăng nhập/<br>Đăng kí</a>
+            <a href="${goc}Giohang.html" class="action"><span class="action_icon"><i class="fas fa-list-check"></i></span>Kiểm tra<br>đơn hàng</a>
+            <a href="${goc}dangnhap.html" class="action" id="nutTaiKhoan"><span class="action_icon"><i class="fas fa-user-check"></i></span>Đăng nhập/<br>Đăng kí</a>
             <a href="${goc}Giohang.html" class="action"><span class="action_icon"><i class="fas fa-cart-shopping"></i></span>Giỏ hàng</a>
         </div>
     </header>
@@ -79,4 +79,25 @@ const Thanhcongcu= `
         </ul>
     </nav>
     `;
+    //Phần đăng nhập
     document.body.insertAdjacentHTML("afterbegin", Thanhcongcu);
+    const taiKhoan = localStorage.getItem("taiKhoan");
+const nutTaiKhoan = document.getElementById("nutTaiKhoan");
+
+if (taiKhoan && nutTaiKhoan) {
+    const tenHienThi = taiKhoan.split("@")[0];  
+
+    nutTaiKhoan.href = "#";
+    nutTaiKhoan.title = taiKhoan;
+    nutTaiKhoan.innerHTML =
+        '<span class="action_icon"><i class="fas fa-user-check"></i></span>' +
+        tenHienThi + "<br>(Đăng xuất)";
+
+    nutTaiKhoan.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (confirm("Bạn muốn đăng xuất?")) {
+            localStorage.removeItem("taiKhoan");
+            window.location.reload();
+        }
+    });alert("taiKhoan = " + taiKhoan + "\nnutTaiKhoan = " + nutTaiKhoan);
+}
